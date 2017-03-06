@@ -2,7 +2,8 @@ define([
     'base/js/namespace'
 ], function(Jupyter) {
     var exports = {};
-
+    
+    // Ajax request to get the latest trending gifs from giphy
     var get_giphy_url = function() {
       var queryURL = 'http://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC&limit=2';
 
@@ -12,6 +13,7 @@ define([
       })
     }
 
+    // Set image to a trending gif
     var insert_gif = function() {
         get_giphy_url().done(function(response) {
             console.log("response", response);
@@ -28,7 +30,7 @@ define([
     }
 
 
-    // Show counts of cell types
+    // Show Giphy Modal
     var show_giphy = function() {
 
       var p = $('<p>').text('Click to display a trending gif from giphy.com')
@@ -53,9 +55,8 @@ define([
         })
     };
 
-    // Wait for notification that the app is ready
     exports.load_ipython_extension = function() {
-        // Then register command mode hotkey "s" to show the dialog
+        // Register hotkey "g" to show the dialog
         Jupyter.keyboard_manager.command_shortcuts.add_shortcut('g', show_giphy);
     };
 

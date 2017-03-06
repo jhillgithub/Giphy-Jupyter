@@ -13,3 +13,5 @@ notebook.nbextensions.install_nbextension('giphy.js', user=True)
 Jupyter.utils.load_extensions('giphy')
 
 ```
+![Alt text](https://github.com/jhillgithub/Giphy-Jupyter/blob/master/Giphy-Jupyter-Dialog.png "Giphy-Jupyter Dialog")
+![Alt text](https://github.com/jhillgithub/Giphy-Jupyter/blob/master/example.gif "Giphy-Jupyter Example")
